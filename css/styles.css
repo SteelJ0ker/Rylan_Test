@@ -15,7 +15,6 @@
 }
 
 * { box-sizing: border-box; }
-
 html, body { height: 100%; }
 
 body {
@@ -24,11 +23,10 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.5;
-  padding-top: 74px; /* for fixed header */
+  padding-top: 84px; /* fixed header spacing */
 }
 
 img { max-width: 100%; display: block; }
-
 a { color: inherit; text-decoration: none; }
 
 .container {
@@ -37,16 +35,15 @@ a { color: inherit; text-decoration: none; }
 }
 
 .center { display: flex; justify-content: center; margin-top: 18px; }
-
 .muted { color: var(--muted); }
 .tiny { font-size: 12px; }
 
-/* Header */
+/* =========================
+   Header
+========================= */
 .site-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 999;
   background: rgba(247, 245, 242, 0.92);
   backdrop-filter: blur(10px);
@@ -63,12 +60,11 @@ a { color: inherit; text-decoration: none; }
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-width: 220px;
+  min-width: 240px;
 }
 
 .brand-logo {
-  height: 60px;
+  height: 70px; /* bigger */
   width: auto;
 }
 
@@ -121,7 +117,9 @@ a { color: inherit; text-decoration: none; }
   opacity: 0.9;
 }
 
-/* Hero */
+/* =========================
+   Hero
+========================= */
 .hero {
   position: relative;
   min-height: 78vh;
@@ -135,7 +133,7 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(247, 245, 242, 0.80), rgba(247, 245, 242, 0.15)),
+    linear-gradient(90deg, rgba(247, 245, 242, 0.84), rgba(247, 245, 242, 0.18)),
     url("../images/hero-home.jpg");
   background-size: cover;
   background-position: center;
@@ -176,11 +174,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 .badge {
-  background: rgba(247, 245, 242, 0.72);
+  background: rgba(247, 245, 242, 0.76);
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 10px 14px;
-  box-shadow: none;
 }
 
 .badge-kicker {
@@ -196,7 +193,9 @@ a { color: inherit; text-decoration: none; }
   margin-top: 2px;
 }
 
-/* Sections */
+/* =========================
+   Sections
+========================= */
 .section { padding: 64px 0; }
 
 .section-alt {
@@ -222,7 +221,9 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 
-/* Buttons */
+/* =========================
+   Buttons
+========================= */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -258,8 +259,10 @@ a { color: inherit; text-decoration: none; }
   color: var(--text);
 }
 
-/* Cards / common surfaces */
-.card, .listing, .tile, .person, .contact-card {
+/* =========================
+   Common Surfaces
+========================= */
+.card, .listing, .tile, .contact-card {
   background: var(--surface);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
@@ -270,11 +273,17 @@ a { color: inherit; text-decoration: none; }
 .card { padding: 18px; }
 .contact-card { padding: 18px; }
 
-/* Cards */
+/* =========================
+   Cards
+========================= */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
+}
+
+.card-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .card-icon {
@@ -297,7 +306,9 @@ a { color: inherit; text-decoration: none; }
   font-weight: 700;
 }
 
-/* Testimonials */
+/* =========================
+   Testimonials (tighter)
+========================= */
 .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -306,52 +317,41 @@ a { color: inherit; text-decoration: none; }
 
 .testimonial {
   background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(31, 41, 55, 0.10);
+  box-shadow: 0 10px 26px rgba(31, 41, 55, 0.08);
   border-radius: var(--radius-lg);
-  padding: 18px;
+  padding: 16px;
 }
 
 .testimonial-stars {
   font-weight: 800;
   letter-spacing: 1px;
   color: var(--accent);
-  margin-bottom: 10px;
-}
-
-.testimonial-quote::before {
-  content: "“";
-  font-size: 32px;
-  color: var(--accent);
-  margin-right: 6px;
+  margin-bottom: 8px;
 }
 
 .testimonial-quote {
-  margin: 0 0 14px 0;
+  margin: 0 0 12px 0;
+  font-size: 15px;
   color: var(--text);
   line-height: 1.55;
 }
 
-.testimonial-meta {
-  display: grid;
-  gap: 2px;
+.testimonial-meta { display: grid; gap: 2px; }
+.testimonial-name { font-weight: 750; }
+.testimonial-muted { color: var(--muted); font-size: 13px; }
+
+/* Zillow links */
+.zillow-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.testimonial-name {
-  font-weight: 750;
-}
-
-.testimonial-muted {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-/* Responsive: testimonials */
-@media (max-width: 980px) {
-  .testimonial-grid { grid-template-columns: 1fr; }
-}
-
-/* Listings */
+/* =========================
+   Listings
+========================= */
 .listing-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -370,66 +370,60 @@ a { color: inherit; text-decoration: none; }
 .listing-address { margin-top: 6px; font-weight: 650; }
 .listing-meta { margin: 6px 0 14px 0; color: var(--muted); font-size: 14px; }
 
-/* Tiles */
-.tile-grid {
+/* =========================
+   Team (profile rows)
+========================= */
+.team-list { display: grid; gap: 14px; }
+
+.team-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 140px 1fr;
   gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
 }
 
-.tile-photo {
-  height: 170px;
+.team-photo {
+  height: 140px;
   background-size: cover;
   background-position: center;
 }
 
-.tile-label {
-  padding: 14px 16px;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-}
-
-/* Team */
-.team-grid {
+.team-info {
+  padding: 16px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  align-content: center;
+  gap: 6px;
 }
 
-.team-grid-two {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.team-name {
+  margin: 0;
+  font-size: 18px;
 }
 
-.person-photo {
-  height: 220px;
-  background-size: cover;
-  background-position: center;
-}
-
-.person-name {
-  margin: 12px 16px 0 16px;
-  font-weight: 800;
-}
-
-.person-role {
-  margin: 2px 16px 0 16px;
+.team-role {
   color: var(--muted);
   font-size: 14px;
 }
 
-.person-actions {
+.team-actions {
   display: flex;
   gap: 10px;
-  padding: 12px 16px 16px 16px;
   flex-wrap: wrap;
+  margin-top: 8px;
 }
 
-/* CTA Strip */
+/* =========================
+   CTA Strip
+========================= */
 .cta-strip {
   padding: 42px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: linear-gradient(90deg, rgba(200, 167, 91, 0.20), rgba(200, 167, 91, 0.06));
+  background: linear-gradient(90deg, rgba(200, 167, 91, 0.18), rgba(200, 167, 91, 0.06));
 }
 
 .cta-inner {
@@ -443,10 +437,12 @@ a { color: inherit; text-decoration: none; }
 .cta-inner h2 { margin: 0 0 6px 0; }
 .cta-inner p { margin: 0; color: var(--muted); }
 
-/* Contact */
+/* =========================
+   Contact
+========================= */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 14px;
 }
 
@@ -464,15 +460,41 @@ input, textarea {
 
 input:focus, textarea:focus { border-color: rgba(47, 110, 166, 0.55); }
 
-.social-link {
-  display: inline-flex;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  background: rgba(31, 41, 55, 0.03);
+.office {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
 }
 
-/* Footer */
+.office h4 { margin: 0 0 6px 0; font-size: 16px; }
+
+.office-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.office-mini {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(31, 41, 55, 0.02);
+}
+
+.office-mini h4 { margin: 0 0 8px 0; }
+.office-mini p { margin: 0 0 10px 0; }
+
+.contact-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   Footer
+========================= */
 .site-footer {
   padding: 34px 0;
   background: var(--surface-2);
@@ -481,7 +503,7 @@ input:focus, textarea:focus { border-color: rgba(47, 110, 166, 0.55); }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr 0.9fr 0.7fr;
   gap: 14px;
   align-items: start;
 }
@@ -500,24 +522,35 @@ input:focus, textarea:focus { border-color: rgba(47, 110, 166, 0.55); }
 
 .footer-links a:hover { color: var(--text); }
 
-/* Office blocks */
-.office {
-  margin-top: 16px;
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
+.footer-logos img {
+  width: 180px;
+  height: auto;
+  display: block;
+  background: transparent;
 }
 
-.office h4 {
-  margin: 0 0 6px 0;
-  font-size: 16px;
-}
+.footer-legal { justify-self: end; }
+@media (max-width: 980px) { .footer-legal { justify-self: start; } }
 
-/* Responsive */
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: var(--muted);
+}
+.footer-social:hover { color: var(--text); }
+
+/* =========================
+   Responsive
+========================= */
 @media (max-width: 980px) {
   .hero-badges { max-width: 520px; }
-  .card-grid, .listing-grid, .tile-grid, .team-grid, .team-grid-two { grid-template-columns: 1fr; }
+  .card-grid, .listing-grid, .card-grid-3 { grid-template-columns: 1fr; }
+  .testimonial-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+  .office-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 860px) {
@@ -525,7 +558,7 @@ input:focus, textarea:focus { border-color: rgba(47, 110, 166, 0.55); }
 
   .site-nav {
     position: absolute;
-    top: 70px;
+    top: 78px;
     right: 20px;
     left: 20px;
     display: none;
@@ -541,10 +574,7 @@ input:focus, textarea:focus { border-color: rgba(47, 110, 166, 0.55); }
   .nav-link { width: 100%; }
 }
 
-/* Zillow links */
-.zillow-links {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
+@media (max-width: 720px) {
+  .team-row { grid-template-columns: 1fr; }
+  .team-photo { height: 220px; }
 }
