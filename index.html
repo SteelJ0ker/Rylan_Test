@@ -2,31 +2,292 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Rylan Realty Group</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rylan Realty Group</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
 
-<header class="site-header">
-    <img src="images/RRG_Logo.png" alt="Rylan Realty Group Logo" class="logo">
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <img class="brand-logo" src="images/RRG_Logo.png" alt="Rylan Realty Group Logo">
+        <span class="brand-name">Rylan Realty Group</span>
+      </a>
 
-    <nav>
-        <a href="#">Home</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav">
+        <a href="#" class="nav-link">Buy</a>
+        <a href="#" class="nav-link">Sell</a>
+        <a href="#" class="nav-link">Property Management</a>
+        <!-- <a href="#" class="nav-link">Communities</a> -->
+        <a href="#" class="nav-link">Team</a>
+        <a href="#" class="nav-link">Contact</a>
+        <a href="#" class="nav-link nav-pill" target="_blank" rel="noopener">Owner Login</a>
+        <a href="#" class="nav-link nav-pill" target="_blank" rel="noopener">Renter Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-media" role="img" aria-label="Modern home interior photo"></div>
+
+    <div class="container hero-content">
+      <h1 class="hero-title">Real estate, simplified.</h1>
+      <p class="hero-subtitle">
+        Helping buyers, sellers, and property owners across Northwest Ohio with clear guidance and real results.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#featured">View Featured Listings</a>
+        <a class="btn btn-ghost" href="#contact">Talk to an Agent</a>
+      </div>
+
+      <div class="hero-badges">
+        <div class="badge">
+          <div class="badge-kicker">Local Expertise</div>
+          <div class="badge-text">Northwest Ohio</div>
+        </div>
+        <div class="badge">
+          <div class="badge-kicker">Property Mgmt</div>
+          <div class="badge-text">Owners & Tenants</div>
+        </div>
+        <div class="badge">
+          <div class="badge-kicker">Fast Response</div>
+          <div class="badge-text">Call / Text / Email</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Actions -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>How can we help?</h2>
+        <p>Start with the option that fits your goal.</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🏡</div>
+          <h3>Buy a home</h3>
+          <p>Explore listings, tour confidently, and negotiate with a plan.</p>
+          <a class="card-link" href="#">Search homes →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📈</div>
+          <h3>Sell your home</h3>
+          <p>Pricing strategy, professional marketing, and smooth closing.</p>
+          <a class="card-link" href="#">Get a home value →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🧰</div>
+          <h3>Property management</h3>
+          <p>Owner support, tenant services, maintenance, and communication.</p>
+          <a class="card-link" href="#">Learn about management →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Listings -->
+  <section id="featured" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Featured listings</h2>
+        <p>A curated look at what’s available right now.</p>
+      </div>
+
+      <!-- Later: replace this with your IDX/MLS embed or API-rendered cards -->
+      <div class="listing-grid">
+        <article class="listing">
+          <div class="listing-photo" style="background-image:url('images/placeholder-home-1.jpg');"></div>
+          <div class="listing-body">
+            <div class="listing-price">$349,900</div>
+            <div class="listing-address">123 Main St, Perrysburg, OH</div>
+            <div class="listing-meta">3 bed • 2 bath • 1,850 sqft</div>
+            <a class="btn btn-small" href="#">View details</a>
+          </div>
+        </article>
+
+        <article class="listing">
+          <div class="listing-photo" style="background-image:url('images/placeholder-home-2.jpg');"></div>
+          <div class="listing-body">
+            <div class="listing-price">$289,500</div>
+            <div class="listing-address">456 Oak Ave, Bowling Green, OH</div>
+            <div class="listing-meta">4 bed • 2.5 bath • 2,100 sqft</div>
+            <a class="btn btn-small" href="#">View details</a>
+          </div>
+        </article>
+
+        <article class="listing">
+          <div class="listing-photo" style="background-image:url('images/placeholder-home-3.jpg');"></div>
+          <div class="listing-body">
+            <div class="listing-price">$419,000</div>
+            <div class="listing-address">789 River Rd, Maumee, OH</div>
+            <div class="listing-meta">4 bed • 3 bath • 2,450 sqft</div>
+            <a class="btn btn-small" href="#">View details</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="center">
+        <a class="btn btn-primary" href="#">See all listings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Communities -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Explore communities</h2>
+        <p>Browse popular areas we serve.</p>
+      </div>
+
+      <div class="tile-grid">
+        <a class="tile" href="#">
+          <div class="tile-photo" style="background-image:url('images/placeholder-area-1.jpg');"></div>
+          <div class="tile-label">Toledo</div>
+        </a>
+
+        <a class="tile" href="#">
+          <div class="tile-photo" style="background-image:url('images/placeholder-area-2.jpg');"></div>
+          <div class="tile-label">Bowling Green</div>
+        </a>
+
+        <a class="tile" href="#">
+          <div class="tile-photo" style="background-image:url('images/placeholder-area-3.jpg');"></div>
+          <div class="tile-label">Maumee</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Preview -->
+  <section id="team" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Meet the team</h2>
+        <p>Local expertise, straight answers, and a no-pressure approach.</p>
+      </div>
+
+    <div class="team-grid team-grid-two">
+        <article class="person">
+          <div class="person-photo" style="background-image:url('images/ryan1.jpg');"></div>
+          <div class="person-name">Ryan Phillips</div>
+          <div class="person-role">Owner • Broker • REALTOR®</div>
+            <div class="person-actions">
+              <a class="btn btn-small" href="#">View Profile</a>
+              <a class="btn btn-small" href="#contact">Contact</a>
+            </div>
+        </article>
+
+        <article class="person">
+          <div class="person-photo" style="background-image:url('images/alan1.jpg');"></div>
+          <div class="person-name">Alan Longenecker</div>
+          <div class="person-role">Owner • REALTOR®</div>            
+            <div class="person-actions">
+              <a class="btn btn-small" href="#">View Profile</a>
+              <a class="btn btn-small" href="#contact">Contact</a>
+            </div>
+        </article>
+      </div>
+
+      <div class="center">
+        <a class="btn btn-primary" href="#contact">Talk to the team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Strip -->
+  <section class="cta-strip">
+    <div class="container cta-inner">
+      <div>
+        <h2>Ready to talk?</h2>
+        <p>Tell us what you’re trying to do — we’ll point you to the best next step.</p>
+      </div>
+      <a class="btn btn-primary" href="#contact">Contact Rylan Realty</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Get in touch</h2>
+        <p>Call, email, or send a quick message.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Contact info</h3>
+          <p class="muted">Update these with the real details.</p>
+          <p><strong>Phone:</strong> (419) 000-0000</p>
+          <p><strong>Email:</strong> info@rylanrealtygroup.com</p>
+          <p><strong>Office:</strong> Holland, Oh & Adrian, Mi</p>
+          <p>
+            <a class="social-link" href="https://www.facebook.com/rylanrealty" target="_blank" rel="noopener">Facebook →</a>
+          </p>
+        </div>
+
+        <form class="contact-card" onsubmit="return false;">
+          <h3>Send a message</h3>
+          <label>
+            Name
+            <input type="text" placeholder="Your name" />
+          </label>
+          <label>
+            Email
+            <input type="email" placeholder="you@example.com" />
+          </label>
+          <label>
+            Message
+            <textarea rows="4" placeholder="How can we help?"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Send</button>
+          <p class="muted tiny">Form wiring comes later (Formspree / Netlify / backend).</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">Rylan Realty Group</div>
+        <div class="muted">Buying • Selling • Property Management</div>
+        <div class="muted tiny">© <span id="year"></span> Rylan Realty Group</div>
+      </div>
+
+      <div class="footer-links">
         <a href="#">Buy</a>
         <a href="#">Sell</a>
-        <a href="#">Team</a>
-        <a href="#">Contact</a>
-    </nav>
-</header>
+        <a href="#">Property Management</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-<main>
-    <h1>Rylan Realty Group</h1>
-    <p>Under Constructions - Stay Tuned</p>
-</main>
+      <div class="footer-links">
+        <a href="#" target="_blank" rel="noopener">Owner Login</a>
+        <a href="#" target="_blank" rel="noopener">Renter Login</a>
+        <a href="#" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </footer>
 
-<script src="js/script.js"></script>
-
+  <script src="js/script.js"></script>
 </body>
+
 </html>
